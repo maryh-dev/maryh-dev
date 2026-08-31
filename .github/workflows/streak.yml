@@ -3,6 +3,9 @@ name: Update GitHub Streak
 on:
   schedule:
     - cron: "0 3 * * *"
+  push:
+    paths:
+      - ".github/workflows/streak.yml"
   workflow_dispatch:
 
 jobs:
@@ -16,22 +19,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate Streak Stats
+      - name: Generate GitHub Streak
         uses: DenverCoder1/github-readme-streak-stats@main
         with:
           options: >-
             user=${{ github.repository_owner }}
-            &hide_border=true
             &background=0B0714
+            &border=151025
             &ring=D89BFF
             &fire=D89BFF
-            &currStreakLabel=C8B6E8
             &currStreakNum=C8B6E8
-            &sideLabels=C8B6E8
             &sideNums=C8B6E8
+            &currStreakLabel=C8B6E8
+            &sideLabels=C8B6E8
             &dates=8B6BB1
-            &stroke=151025
             &disable_animations=true
+            &card_width=495
+            &card_height=195
           path: profile/streak.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
