@@ -13,36 +13,21 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
 
-      - name: Generate GitHub Stats
+      - name: Generate stats card
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
-          options: >-
-            username=${{ github.repository_owner }}
-            &show_icons=true
-            &hide_border=true
-            &bg_color=0B0714
-            &title_color=C8B6E8
-            &text_color=8B6BB1
-            &icon_color=D89BFF
+          options: username=${{ github.repository_owner }}&show_icons=true&hide_border=true&bg_color=0B0714&title_color=C8B6E8&text_color=8B6BB1&icon_color=D89BFF
           path: profile/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate Top Languages
+      - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: >-
-            username=${{ github.repository_owner }}
-            &layout=compact
-            &langs_count=6
-            &hide_border=true
-            &bg_color=0B0714
-            &title_color=C8B6E8
-            &text_color=8B6BB1
+          options: username=${{ github.repository_owner }}&layout=compact&langs_count=6&hide_border=true&bg_color=0B0714&title_color=C8B6E8&text_color=8B6BB1
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
