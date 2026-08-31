@@ -92,6 +92,7 @@
 <img src="./profile/stats.svg" width="420" alt="GitHub Statistics">
 
 <br>
+<br>
 
 <img src="./profile/top-langs.svg" width="300" alt="Most Used Languages">
 
